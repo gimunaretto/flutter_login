@@ -301,6 +301,7 @@ class _FlutterLoginState extends State<FlutterLogin>
   @override
   void initState() {
     super.initState();
+    SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
 
     _loadingController = AnimationController(
       vsync: this,
