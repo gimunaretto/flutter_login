@@ -588,16 +588,38 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
   //   );
   // }
 
+  // Widget _buildSubmitButton(
+  //     ThemeData theme, LoginMessages messages, Auth auth) {
+  //   return ScaleTransition(
+  //     scale: _buttonScaleAnimation,
+  //     child: AnimatedButton(
+  //       controller: _submitController,
+  //       text: auth.isLogin ? messages.loginButton : messages.signupButton,
+  //       onPressed: _submit,
+  //     ),
+  //   );
+  // }
   Widget _buildSubmitButton(
-      ThemeData theme, LoginMessages messages, Auth auth) {
+      ThemeData theme, LoginMessages messages, Auth auth, double width) {
     return ScaleTransition(
-      scale: _buttonScaleAnimation,
-      child: AnimatedButton(
-        controller: _submitController,
-        text: auth.isLogin ? messages.loginButton : messages.signupButton,
-        onPressed: _submit,
-      ),
-    );
+        scale: _buttonScaleAnimation,
+        child: Container(
+          height: 40,
+          width: width,
+          child: RaisedButton(
+            color: theme.buttonColor,
+            textColor: Colors.white,
+            child: Text(
+              '${auth.isLogin ? messages.loginButton : messages.signupButton}',
+            ),
+            onPressed: () {
+              _submit();
+            },
+            shape: RoundedRectangleBorder(
+                borderRadius: new BorderRadius.circular(100.0),
+                side: BorderSide(color: theme.buttonColor)),
+          ),
+        ));
   }
 
   // Widget _buildSwitchAuthButton(ThemeData theme, LoginMessages messages, Auth auth) {
@@ -674,7 +696,7 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
               children: <Widget>[
                 // _buildForgotPassword(theme, messages),
                 SizedBox(height: 20),
-                _buildSubmitButton(theme, messages, auth),
+                _buildSubmitButton(theme, messages, auth, textFieldWidth),
                 SizedBox(height: 20),
                 // _buildSwitchAuthButton(theme, messages, auth),
               ],
