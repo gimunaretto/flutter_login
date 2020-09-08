@@ -696,7 +696,7 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
                 // _buildForgotPassword(theme, messages),
                 SizedBox(height: 20),
                 _buildSubmitButton(theme, messages, auth, textFieldWidth),
-                SizedBox(height: 10),
+                SizedBox(height: 15),
                 // _buildSwitchAuthButton(theme, messages, auth),
               ],
             ),
