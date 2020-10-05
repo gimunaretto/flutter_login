@@ -519,7 +519,7 @@ class _FlutterLoginState extends State<FlutterLogin>
         highlightElevation: buttonTheme.highlightElevation ?? 2.0,
         shape: buttonTheme.shape ?? StadiumBorder(),
       ),
-      // put it here because floatingActionButtonTheme doesnt have highlightColor property
+      // put it here because floatingActionButtonTheme doesn't have highlightColor property
       highlightColor:
           loginTheme.buttonTheme.highlightColor ?? theme.highlightColor,
       textTheme: theme.textTheme.copyWith(
@@ -594,17 +594,11 @@ class _FlutterLoginState extends State<FlutterLogin>
                     Positioned(
                       bottom: 0,
                       child: Container(
-                        child: Stack(
-                          children: <Widget>[
-                            Positioned(
-                              child: Image.asset(
-                                  'assets/images/logo_branco_brlog.png',
-                                  filterQuality: FilterQuality.high,
-                                  height: 80,
-                                  alignment: Alignment.bottomCenter),
-                            )
-                          ],
-                        ),
+                        child: Image.asset(
+                            'assets/images/logo_branco_brlog.png',
+                            filterQuality: FilterQuality.high,
+                            height: 80,
+                            alignment: Alignment.bottomCenter),
                       ),
                     )
                   ],
