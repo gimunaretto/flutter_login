@@ -785,7 +785,7 @@ class _RecoverCardState extends State<_RecoverCard>
   }
 
   Widget _buildBackButton(ThemeData theme, LoginMessages messages) {
-    return FlatButton(
+    return TextButton(
       child: AutoSizeText(messages.goBackButton),
       onPressed: !_isSubmitting
           ? () {
@@ -793,9 +793,10 @@ class _RecoverCardState extends State<_RecoverCard>
               widget.onSwitchLogin();
             }
           : null,
-      padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 4),
-      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      textColor: theme.primaryColor,
+      style: TextButton.styleFrom(
+          padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 4),
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          primary: theme.primaryColor),
     );
   }
 
